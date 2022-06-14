@@ -3,9 +3,9 @@
 #include <stdio.h>
 
 /**
- * Main - The last digit
+ * main - The last digit
  *
- *Return zero
+ * Return: zero
  *
  */
 
