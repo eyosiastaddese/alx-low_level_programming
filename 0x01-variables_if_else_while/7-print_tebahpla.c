@@ -12,7 +12,7 @@ int main(void)
 
 	while (ch >= 'a')
 	{
-		putchr(ch);
+		putchar(ch);
 		--ch;
 	}
 	putchar('\n');
