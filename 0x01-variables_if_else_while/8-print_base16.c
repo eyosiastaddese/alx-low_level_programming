@@ -8,21 +8,13 @@
 
 int main(void)
 {
-	char a = '0';
+	int i;
+	int ch;
 
-	while (a <= '9')
-	{
-		putchar(a);
-		++a;
-	}
-	
-	char ch = 'a';
-
-	while (ch <= 'f')
-	{
+	for (i = '0'; i <= '9'; i++)
+		putchar(i);
+	for (ch = 'a'; ch <= 'f'; ch++)
 		putchar(ch);
-		++ch;
-	}
 	putchar('\n');
 
 	return (0);
