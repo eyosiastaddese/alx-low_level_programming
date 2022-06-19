@@ -1,7 +1,7 @@
-#include "_putchar.h"
+#include "main.h"
 
 /**
- * main - putchar
+ * main - _putchar
  *
  * Return: zero
  *
