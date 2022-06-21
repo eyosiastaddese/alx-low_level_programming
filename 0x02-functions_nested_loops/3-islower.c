@@ -3,10 +3,12 @@
 /**
  * islower - check the lowercases
  *
+ * @c: checks input of function
+ *
  * Return: 1 if c is lowercase otherwise 0
  */
 
-int islower(int c)
+int _islower(int c)
 {
 	if (c >= 97 && c <= 122)
 		return (1);
