@@ -2,7 +2,6 @@
 
 /**
  * main - positive of negative
- *
  * Return: zero
  */
 
