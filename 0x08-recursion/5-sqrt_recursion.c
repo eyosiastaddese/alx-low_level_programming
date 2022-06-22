@@ -34,5 +34,5 @@ int isqrt(int n, int i)
 		return (-1);
 	if (i * i == n)
 		return (1);
-	return (isqrt(n, i + !));
+	return (isqrt(n, i + 1));
 }
