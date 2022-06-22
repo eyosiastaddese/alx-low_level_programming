@@ -1,4 +1,4 @@
-#include "mqin.h"
+#include "main.h"
 
 /**
  * _sqrt_recursion - returns the natural square root of a number
@@ -23,6 +23,7 @@ int _sqrt_recursion(int n)
 /**
  * isqrt - wrapper function to check for squaroot.
  *
+ * @n: number
  * @i: squareroot.
  *
  * Return: 1 if squareroot is found, -1 if not found else recurse.
