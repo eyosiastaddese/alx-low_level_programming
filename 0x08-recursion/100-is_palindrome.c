@@ -6,12 +6,12 @@ int _strlen_recursion(char *s)
 	if (*s)
 	{
 		s++;
-		return (1  _strlen_recursion(s));
+		return (1 +  _strlen_recursion(s));
 	}
 	return (0);
 }
 
-int checker(char, *str int len, int count)
+int checker(char *str, int len, int count)
 {
 	if (count >= len)
 		return (1);
@@ -22,7 +22,7 @@ int checker(char, *str int len, int count)
 
 int is_palindrome(char *s)
 {
-	int len = _strlrn_recursion(s);
+	int len = _strlen_recursion(s);
 	int count = 0;
 
 	return (checker(s, len - 1, count));
