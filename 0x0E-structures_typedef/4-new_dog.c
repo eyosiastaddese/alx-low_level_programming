@@ -28,7 +28,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	if (i == NULL)
 	{
 		free(django);
-		return(NULL);
+		return (NULL);
 	}
 	j = malloc(sizeof(char) * y + 1);
 	if (j == NULL)
