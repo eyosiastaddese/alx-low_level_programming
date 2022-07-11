@@ -1,49 +1,65 @@
 #include "dog.h"
-#include <stdio.h>
 #include <stdlib.h>
 /**
- * new_dog - Function that creates a new dog
+ * _strdup - returns a pointer to a newly allocated space in memory
  *
- * @name: type pointer char name
- * @age: type pointer float age
- * @owner: type pointer char owner
+ * @s: string input
  *
- * Return: 0
+ * Return: pointer to the duplicated string
+ */
+char *_strdup(char *s)
+{
+	int i, len;
+	char *str;
+
+	if (s == NULL)
+		return (0);
+
+	for (len = 0; s[len]; len++)
+		;
+
+	str = malloc(sizeof(char) * len + 1);
+
+	if (str == 0)
+		return (0);
+
+	for (i = 0; i <= len; i++)
+		str[i] = s[i];
+
+	return (str);
+}
+/**
+ * new_dog - creates a new dog
+ *
+ * @name: name of the dog
+ * @age: age of dog
+ * @owner: owner of dog
+ *
+ * Return: 1 0n success, -1 on error
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	struct dog *django;
-	char *i, *j;
-	int x, y, z;
+	dog_t *new_dog;
 
-	django = malloc(sizeof(struct dog));
-	if (django == NULL)
-		return (NULL);
+	new_dog = malloc(sizeof(struct dog));
 
-	for (x = 0; *(name + x) != '\0'; x++)
-		;
-	for (y = 0; *(owner + y) != '\0'; y++)
-		;
-	i = malloc(sizeof(char) * x + 1);
-	if (i == NULL)
+	if (new_dog == 0 || name == 0 || owner == 0)
+		return (0);
+
+	new_dog->name = _strdup(name);
+	if (!new_dog->name)
 	{
-		free(django);
-		return (NULL);
+		free(new_dog);
+		return (0);
 	}
-	j = malloc(sizeof(char) * y + 1);
-	if (j == NULL)
-	{
-		free(i);
-		free(django);
-		return (NULL);
-	}
-	for (z = 0; z <= x; z++)
-		*(i + z) = *(name + z);
-	for (z = 0; z <= y; z++)
-		*(j + z) = *(owner + z);
-	django->name = i;
-	django->age = age;
-	django->owner = j;
+	new_dog->age = age;
+	new_dog->owner = _strdup(owner);
 
-	return (django);
+	if (!new_dog->owner)
+	{
+		free(new_dog);
+		free(new_dog->name);
+		return (0);
+	}
+	return (new_dog);
 }
