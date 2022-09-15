@@ -1,1 +1,1 @@
-This is a readme of c
+This is the Readme of C projects
